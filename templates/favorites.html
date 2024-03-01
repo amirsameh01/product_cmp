@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Favorite Products</h2>
+    {% if favorite_products %}
+        <ul>
+            {% for product in favorite_products %}
+                <li>{{ product.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You haven't added any products to your favorites yet.</p>
+    {% endif %}
+</div>
+{% endblock %}

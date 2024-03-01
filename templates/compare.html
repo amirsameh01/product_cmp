@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Products</h2>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Attributes</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in selected_products %}
+
+            <tr>
+                <td>{{ product.title }}</td>
+                <td>
+                    {% for attribute in selected_product_attributes %}
+                        {% if attribute.product == product %}
+                            {{ attribute.attribute.name }}: {{ attribute.value }}<br>
+                        {% endif %}
+                    {% endfor %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="text-center">No products available.</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
