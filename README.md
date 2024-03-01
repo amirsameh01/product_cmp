@@ -41,7 +41,7 @@ To add new products follow these step in order:
 
 1.  Clone repo
 2.  Setup project
-
+```
     #do this once
     python3 -m venv .venv
     
@@ -51,12 +51,12 @@ To add new products follow these step in order:
     pip install -r requirements.txt
     
     #run migrations
-python manage.py makemigrations
+    python manage.py makemigrations
     python manage.py migrate
-
+```
 6.  Create admin user
-
+`
     python manage.py createsuperuser
-   
+   `
 
 8.  Run development server  `python manage.py runserver`
